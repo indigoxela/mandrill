@@ -1,7 +1,8 @@
 name = Mandrill Activity
 description = View activity for an email address associated with any entity.
 package = Mandrill
-core = 7.x
+version = BACKDROP_VERSION
+backdrop = 1.x
 
 dependencies[] = mandrill
 dependencies[] = entity

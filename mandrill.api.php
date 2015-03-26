@@ -4,7 +4,7 @@
  * @file
  * This file contains no working PHP code; it exists to provide additional
  * documentation for doxygen as well as to document hooks in the standard
- * Drupal manner.
+ * Backdrop manner.
  */
 
 /**
@@ -15,8 +15,8 @@
  * @see MandrillMailSystem::mail()
  *
  * @array $message
- *   The drupal_mail message array.
- * @see drupal_mail()
+ *   The backdrop_mail message array.
+ * @see backdrop_mail()
  */
 function hook_mandrill_mail_alter(&$mandrill_params, $message) {
   // No example.

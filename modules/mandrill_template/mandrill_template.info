@@ -1,6 +1,7 @@
 name = Mandrill Template
 description = "Use Mandrill templates for messages sent through Mandrill."
-core = 7.x
+version = BACKDROP_VERSION
+backdrop = 1.x
 package = Mandrill
 
 configure = admin/config/services/mandrill/templates

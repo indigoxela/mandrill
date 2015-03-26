@@ -12,9 +12,9 @@ require 'mandrill_templates_test.inc';
 require 'mandrill_urls_test.inc';
 require 'mandrill_users_test.inc';
 
-class DrupalMandrillTest extends DrupalMandrill {
+class BackdropMandrillTest extends BackdropMandrill {
   /**
-   * @see DrupalMandrill::__construct()
+   * @see BackdropMandrill::__construct()
    */
   public function __construct($apikey = NULL, $timeout = 60) {
     parent::__construct($apikey, $timeout);

@@ -59,7 +59,7 @@ function mandrill_template_map_form($form, &$form_state, MandrillTemplateMap $ma
   }
   // Check if the currently configured template still exists.
   if (!empty($map->template_id) && !array_key_exists($map->template_id, $template_names)) {
-    drupal_set_message(t('The configured Mandrill template is no longer available, please select a valid one.'), 'warning');
+    backdrop_set_message(t('The configured Mandrill template is no longer available, please select a valid one.'), 'warning');
   }
   if (!empty($templates)) {
     $options = array('' => t('-- Select --'));
@@ -120,12 +120,12 @@ function mandrill_template_map_form($form, &$form_state, MandrillTemplateMap $ma
         '#default_value' => isset($map->mailsystem_key) ? $map->mailsystem_key : '',
       );
       if (!$available_modules) {
-        drupal_set_message(t("All email-using modules that have been assigned to Mandrill are already assigned to other template maps"), 'warning');
+        backdrop_set_message(t("All email-using modules that have been assigned to Mandrill are already assigned to other template maps"), 'warning');
       }
     }
 
     if (!$mandrill_in_use) {
-      drupal_set_message(t("You have not assigned any Modules to use Mandrill: to use this template, make sure Mandrill is assigned in Mailsystem."), 'warning');
+      backdrop_set_message(t("You have not assigned any Modules to use Mandrill: to use this template, make sure Mandrill is assigned in Mailsystem."), 'warning');
     }
   }
   else {
@@ -173,7 +173,7 @@ function mandrill_template_map_form_submit($form, &$form_state) {
     }
   }
   $map->save();
-  drupal_set_message(t('Mandrill template mapping saved.'));
+  backdrop_set_message(t('Mandrill template mapping saved.'));
   $form_state['redirect'] = 'admin/config/services/mandrill/templates';
 }
 

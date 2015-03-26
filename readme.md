@@ -1,37 +1,78 @@
-## SUMMARY
+MANDRILL
+===========
 
-Integrates Drupal's mail system with Mandrill transactional emails, a service
+CONTENTS OF THIS FILE
+---------------------
+
+ - Introduction
+ - Requirements
+ - Installation
+ - Permissions
+ - Usage
+ - Sponsors
+
+INTRODUCTION
+------------
+
+by levelos <https://www.drupal.org/u/levelos>
+
+Integrates Backdrop's mail system with Mandrill transactional emails, a service
 by the folks behind MailChimp. Learn more about Mandrill and how to sign up at
 [their website](http://mandrill.com). (Or don't, but then this module isn't
 terribly useful...)
 
-## REQUIREMENTS
 
-* mailsystem module (https://drupal.org/project/mailsystem)
-* Mandrill PHP library (https://bitbucket.org/mailchimp/mandrill-api-php/get/1.0.52.zip)
+The Mandrill module, as the name implies, provides integration with Mandrill transactional email, a service of MailChimp. For sites that send a significant amount of email, using a transactional email service is a great way to get modern analytics and reporting, spam compliance features, scale email to bulk levels, and have your email delivered more reliably.
 
-## INSTALLATION
+With the Mandrill module, you can also do cool stuff like create rich email templates in Mandrill and assign them to different email-generating modules in Backdrop, so your different types of emails can all be branded differently.
+
+Mandrill plays nice with other mail-system utilizing modules, particularly mailsystem, which is required for Mandrill configuration. Of course, the Mandrill module also plays well with the MailChimp module, which provides specific mass-email functionality like lists and campaigns.
+
+Features Include:
+
+Ability to route site emails through Mandrill, with granular configuration for different mail-generating modules.
+A reporting dashboard.
+Asynchronous sending options.
+Integration with Mandrill's template system, with capacity for simultaneous use of different templates.
+Email activity tracking for any Backdrop entity with a valid email address.
+Developed by the friendly geeks from ThinkShout, sponsored by Freddy and the rest of the amazing team from MailChimp. Read more about the 1.3 release on the ThinkShout blog.
+
+TESTED
+-----
+
+@todo
+This module has NOT BEEN TESTED and is being ported to Backdrop.  It may work.
+
+KNOWN ISSUES
+---------------------
+@todo
+
+
+REQUIREMENTS
+------------
+
+* mailsystem module
+
+INSTALLATION
+------------
+
+Mandrill can be installed via the standard Backdrop installation process
+(http://drupal.org/documentation/install/modules-themes/modules-7).
+
 * You need to have a Mandrill API Key.
-* The Mandrill library must be downloaded into your libraries folder. It's
-  available at https://bitbucket.org/mailchimp/mandrill-api-php/get/1.0.52.zip
-  or by using the included example drush make file.
-  Proper libraries structure:
-    - libraries/
-      - mandrill/
-        - docs/
-        - src/
-          - Mandrill.php
-          - Mandrill/
-        - LICENSE
-        - composer.json
-
-## INSTALLATION NOTES
 
 * If you are upgrading from one of many previous versions, You may find an extra
   Mail System class in the Mailsystem configuration called "Mandrill module
   class". It's harmless, but feel free to delete it.
 
-## CONFIGURATION
+PERMISSIONS
+------------
+
+@todo
+
+
+USAGE
+-----
 
 ### Set Mandrill API Key
 Start by loading up the Mandrill admin page at Configuration -> Web
@@ -79,7 +120,7 @@ greater than 0.
 ### SEND TEST EMAIL
 
 The Send Test Email function is pretty self-explanatory. The To: field will
-accept multiple addresses formatted in any Drupal mail system approved way.
+accept multiple addresses formatted in any Backdrop mail system approved way.
 By configuring the Mandrill Test module/key pair in Mail System, you can
 use this tool to test outgoing mail for any installed mailer.
 
@@ -131,7 +172,7 @@ Shows account information, quotas, and all-time usage stats.
 
 ## Activity
 The Mandrill Activity sub-modules allows users to view email activity for any
-Drupal entity with a valid email address. Configuration and usage details are in
+Backdrop entity with a valid email address. Configuration and usage details are in
 sub-module's README file.
 
 ## Advanced Options
@@ -139,3 +180,31 @@ If you would like to use additional template (or other) Mandrill API
 variables not implemented in this module, set them in hook_mail_alter under:
 $params['mandrill']. Have a look at mandrill.mail.inc to learn more.
 (Search for "mandrill parameters".)
+
+
+If your Backdrop installation uses a .make file, see the example in mandrill.make.example.
+
+Please Read:
+If you are using the mandrill_templates sub-module to send html emails, you may see your emails displaying poorly on web-based email clients like gmail. It's important to enable Mandrill's CSS-inlining functionality to mitigate this issue.
+
+
+License
+-------
+
+This project is GPL v2 software. See the LICENSE.txt file in this directory for
+complete text.
+
+Maintainers
+-----------
+
+- seeking
+
+Current Maintainers on Drupal:
+
+ - levelos <https://www.drupal.org/u/levelos>
+ - ruscoe <https://www.drupal.org/u/ruscoe>
+ - gcb <https://www.drupal.org/u/gcb>
+
+Ported to Backdrop by:
+
+ - biolithic <https://github.com/biolithic>

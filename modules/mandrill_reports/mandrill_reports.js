@@ -1,15 +1,15 @@
 (function ($) {
 
-Drupal.behaviors.mandrill_reports = {
+Backdrop.behaviors.mandrill_reports = {
   attach: function (context, settings) {
     google.load("visualization", "1", {packages:["corechart"], "callback":drawCharts});
 
     function drawCharts() {
       var dataTableVol = new google.visualization.DataTable();
-      dataTableVol.addColumn('datetime', Drupal.t('Date'));
-      dataTableVol.addColumn('number', Drupal.t('Delivered'));
-      dataTableVol.addColumn('number', Drupal.t('Bounced'));
-      dataTableVol.addColumn('number', Drupal.t('Rejected'));
+      dataTableVol.addColumn('datetime', Backdrop.t('Date'));
+      dataTableVol.addColumn('number', Backdrop.t('Delivered'));
+      dataTableVol.addColumn('number', Backdrop.t('Bounced'));
+      dataTableVol.addColumn('number', Backdrop.t('Rejected'));
 
       for (var key in settings.mandrill_reports.volume) {
         dataTableVol.addRow([
@@ -29,9 +29,9 @@ Drupal.behaviors.mandrill_reports = {
       chart.draw(dataTableVol, options);
 
       var dataTableEng = new google.visualization.DataTable();
-      dataTableEng.addColumn('datetime', Drupal.t('Date'));
-      dataTableEng.addColumn('number', Drupal.t('Open rate'));
-      dataTableEng.addColumn('number', Drupal.t('Click rate'));
+      dataTableEng.addColumn('datetime', Backdrop.t('Date'));
+      dataTableEng.addColumn('number', Backdrop.t('Open rate'));
+      dataTableEng.addColumn('number', Backdrop.t('Click rate'));
 
       for (var key in settings.mandrill_reports.engagement) {
         dataTableEng.addRow([

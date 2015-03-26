@@ -5,7 +5,7 @@
  */
 
 class Mandrill_MessagesTest extends Mandrill_Messages {
-  public function __construct(DrupalMandrillTest $master) {
+  public function __construct(BackdropMandrillTest $master) {
     parent::__construct($master);
   }
 

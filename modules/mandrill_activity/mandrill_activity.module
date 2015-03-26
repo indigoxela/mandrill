@@ -107,12 +107,12 @@ function mandrill_activity_page($entity, MandrillActivityEntity $mandrill_activi
   $email_property = $mandrill_activity_entity->email_property;
   $email_property_array = explode(':', $email_property);
   $parent = $entity_wrapper;
-  foreach ($email_property_array as $drupal_field) {
+  foreach ($email_property_array as $backdrop_field) {
     if ($parent instanceof EntityListWrapper) {
-      $child_wrapper = $parent->get(0)->{$drupal_field};
+      $child_wrapper = $parent->get(0)->{$backdrop_field};
     }
     else {
-      $child_wrapper = $parent->{$drupal_field};
+      $child_wrapper = $parent->{$backdrop_field};
     }
     $parent = $child_wrapper;
   }

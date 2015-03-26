@@ -4,7 +4,7 @@
  * Test class and methods for the Mandrill Activity module.
  */
 
-class MandrillActivityTestCase extends DrupalWebTestCase {
+class MandrillActivityTestCase extends BackdropWebTestCase {
   /**
    * Returns info displayed in the test interface.
    *
@@ -28,7 +28,7 @@ class MandrillActivityTestCase extends DrupalWebTestCase {
    */
   protected function setUp() {
     // Use a profile that contains required modules:
-    $prof = drupal_get_profile();
+    $prof = backdrop_get_profile();
     $this->profile = $prof;
     // Enable modules required for the test.
     $enabled_modules = array(
@@ -38,8 +38,8 @@ class MandrillActivityTestCase extends DrupalWebTestCase {
       'entity',
     );
     parent::setUp($enabled_modules);
-    variable_set('mandrill_api_classname', 'DrupalMandrillTest');
-    variable_set('mandrill_api_key', 'MANDRILL_TEST_API_KEY');
+    config_set('mandrill.settings', 'mandrill_api_classname', 'BackdropMandrillTest');
+    config_set('mandrill.settings', 'mandrill_api_key', 'MANDRILL_TEST_API_KEY');
   }
 
   /**

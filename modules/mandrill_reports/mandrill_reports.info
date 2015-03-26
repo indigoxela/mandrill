@@ -1,6 +1,7 @@
 name = Mandrill Reports
 description = "Providing reporting on activity through Mandrill."
-core = 7.x
+version = BACKDROP_VERSION
+backdrop = 1.x
 package = Mandrill
 
 dependencies[] = mandrill

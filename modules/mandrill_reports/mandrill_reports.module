@@ -103,8 +103,8 @@ function mandrill_reports_data() {
     cache_set('mandrill_report_data', $data, 'cache', CACHE_TEMPORARY);
   }
   else {
-    drupal_set_message(t('Please enter a Mandrill API key to use reports.'));
-    drupal_goto('admin/config/services/mandrill');
+    backdrop_set_message(t('Please enter a Mandrill API key to use reports.'));
+    backdrop_goto('admin/config/services/mandrill');
   }
   return $data;
 }
@@ -150,7 +150,7 @@ function mandrill_reports_dashboard_page() {
       $url['clicks']);
   }
 
-  $path = drupal_get_path('module', 'mandrill_reports');
+  $path = backdrop_get_path('module', 'mandrill_reports');
   $render = array(
     '#attached' => array(
       'js' => array(

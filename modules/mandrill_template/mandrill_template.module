@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Enables Drupal to send email using Mandrill's template system.
+ * Enables Backdrop to send email using Mandrill's template system.
  */
 
 /**
@@ -45,7 +45,7 @@ function mandrill_template_entity_info() {
  */
 function mandrill_template_map_access() {
   $a = user_access('configure mandrill templates');
-  $b = variable_get('mandrill_api_key');
+  $b = config_get('mandrill.settings', 'mandrill_api_key');
   return $a & !empty($b);
 }
 

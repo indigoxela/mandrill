@@ -6,9 +6,9 @@
  */
 
 /**
- * Class DrupalMandrill.
+ * Class BackdropMandrill.
  */
-class DrupalMandrill extends Mandrill {
+class BackdropMandrill extends Mandrill {
 
   protected $userAgent;
   protected $timeout;
@@ -51,13 +51,13 @@ class DrupalMandrill extends Mandrill {
   public function __destruct() {}
 
   /**
-   * Override call method to user Drupal's HTTP handling.
+   * Override call method to user Backdrop's HTTP handling.
    */
   public function call($url, $params) {
     $params['key'] = $this->apikey;
-    $params = drupal_json_encode($params);
+    $params = backdrop_json_encode($params);
 
-    $response = drupal_http_request(
+    $response = backdrop_http_request(
       $this->root . $url . '.json',
       array(
         'method' => 'POST',
@@ -75,7 +75,7 @@ class DrupalMandrill extends Mandrill {
       throw new Mandrill_HttpError(t('Mandrill API call to !url failed: @msg', array('!url' => $url, '@msg' => $response->error)));
     }
 
-    $result = drupal_json_decode($response->data);
+    $result = backdrop_json_decode($response->data);
 
     if ($result === NULL) {
       throw new Mandrill_Error('We were unable to decode the JSON response from the Mandrill API: ' . $response->data);

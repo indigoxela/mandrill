@@ -5,7 +5,7 @@
  */
 
 class Mandrill_SubaccountsTest extends Mandrill_Subaccounts {
-  public function __construct(DrupalMandrillTest $master) {
+  public function __construct(BackdropMandrillTest $master) {
     parent::__construct($master);
   }
 
