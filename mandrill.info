@@ -2,11 +2,7 @@ name = Mandrill
 description = "Allow for site emails to be sent through Mandrill."
 version = BACKDROP_VERSION
 backdrop = 1.x
+type = module
 package = Mandrill
 configure = admin/config/services/mandrill
-dependencies[] = mailsystem (>=2.x)
-
-files[] = lib/mandrill.mail.inc
-files[] = lib/mandrill.inc
-files[] = tests/includes/mandrill_test.inc
-files[] = tests/mandrill.test
+dependencies[] = mailsystem

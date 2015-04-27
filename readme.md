@@ -1,20 +1,23 @@
 MANDRILL
-===========
+===================
 
 CONTENTS OF THIS FILE
 ---------------------
 
  - Introduction
+ - Tested
+ - Known Issues
+ - Special Thanks
  - Requirements
  - Installation
- - Permissions
+ - Coming From Drupal?
  - Usage
- - Sponsors
+ - License
+ - Credits
+ - Maintainers
 
 INTRODUCTION
 ------------
-
-by levelos <https://www.drupal.org/u/levelos>
 
 Integrates Backdrop's mail system with Mandrill transactional emails, a service
 by the folks behind MailChimp. Learn more about Mandrill and how to sign up at
@@ -40,30 +43,58 @@ Developed by the friendly geeks from ThinkShout, sponsored by Freddy and the res
 TESTED
 -----
 
-@todo
-This module has NOT BEEN TESTED and is being ported to Backdrop.  It may work.
+Email Modules
+The following modules ported to Backdrop are inter-related to the mailing system:
+
+simplenews
+
+simplenews_scheduler
+
+mimemail
+
+mandrill
+
+mailsystem
+
+smtp
+
+They have been converted from Drupal to Backdrop but are still not working.  They need debugging into what was changed between the systems and how to fix it. I, biolithic the one who did the intial conversion, lack the heart or time in the spring of 2015 to debug them currently.
+
+Do you have a need or desire for email newsletters?  You are welcome to submit pull requests to finish these modules.  It may not be a lot of work.  Thanks!
 
 KNOWN ISSUES
 ---------------------
+
 @todo
 
+Backdrop CMS removed this table and we are re-engineering the module to work within the Backdrop way.
+
+SPECIAL THANKS
+--------------
+
+Developed by the friendly geeks from ThinkShout, sponsored by Freddy and the rest of the amazing team from MailChimp. Read more about the 1.3 release on the ThinkShout blog.
 
 REQUIREMENTS
 ------------
 
-* mailsystem module
+MailSystem
 
 INSTALLATION
 ------------
 
-Mandrill can be installed via the standard Backdrop installation process
-(http://drupal.org/documentation/install/modules-themes/modules-7).
+Install this module using the official Backdrop CMS instructions at https://backdropcms.org/guide/modules
 
 * You need to have a Mandrill API Key.
 
 * If you are upgrading from one of many previous versions, You may find an extra
   Mail System class in the Mailsystem configuration called "Mandrill module
   class". It's harmless, but feel free to delete it.
+
+
+COMING FROM DRUPAL?
+-------------------
+
+@todo
 
 PERMISSIONS
 ------------
@@ -187,23 +218,24 @@ If your Backdrop installation uses a .make file, see the example in mandrill.mak
 Please Read:
 If you are using the mandrill_templates sub-module to send html emails, you may see your emails displaying poorly on web-based email clients like gmail. It's important to enable Mandrill's CSS-inlining functionality to mitigate this issue.
 
-
-License
+LICENSE
 -------
 
-This project is GPL v2 software. See the LICENSE.txt file in this directory for
-complete text.
+This project is GPL v2 software. See the LICENSE.txt file in this directory for complete text.
 
-Maintainers
+CREDITS
 -----------
 
-- seeking
-
-Current Maintainers on Drupal:
+This module is based on the Mandrill module for Drupal, originally written and maintained by a large number of contributors, including:
 
  - levelos <https://www.drupal.org/u/levelos>
  - ruscoe <https://www.drupal.org/u/ruscoe>
  - gcb <https://www.drupal.org/u/gcb>
+
+MAINTAINERS
+-----------
+
+- seeking
 
 Ported to Backdrop by:
 

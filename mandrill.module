@@ -5,20 +5,18 @@
  * Enables Backdrop to send email directly through Mandrill.
  */
 
-
 define('MANDRILL_QUEUE', 'mandrill_queue');
 define('MANDRILL_EMAIL_REGEX', '/^\s*(.+?)\s*<\s*([^>]+)\s*>$/');
 
 /**
- * Implements hook_help().
+ * Implements hook_config_info().
  */
-function mandrill_help($path, $arg) {
-  $output = '';
-  switch ($path) {
-    case 'admin/help#mandrill':
-      $output = t('Allow for site emails to be sent through Mandrill.');
-  }
-  return $output;
+function mandrill_config_info() {
+  $prefixes['mandrill.settings'] = array(
+    'label' => t('mandrill settings'),
+    'group' => t('mandrill'),
+  );
+  return $prefixes;
 }
 
 /**
