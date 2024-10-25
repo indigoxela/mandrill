@@ -235,7 +235,8 @@ This module is based on the Mandrill module for Drupal, originally written and m
 MAINTAINERS
 -----------
 
-- seeking
+- [indigoxela](https://github.com/indigoxela)
+- Seeking additional maintainers
 
 Ported to Backdrop by:
 
